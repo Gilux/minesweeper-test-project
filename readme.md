@@ -25,7 +25,7 @@ Le but est de creuser le terrain en évitant les mines, en s'aidant d'indices d�
 
 - Ces indicateurs sont cachés jusqu'à ce que la case soit révélée.
 
-- Le temps commence à s'écouler dès le 1er clic sur le plateau. Il doit s'afficher en haut à gauche sous la forme MM:SS.
+- Le temps commence à s'écouler dès le 1er clic sur le plateau. Il doit s'afficher en haut à gauche sous la forme MM:SS et être rafraîchi chaque seconde.
 
 - Un clic gauche permet de creuser une case. Elle devient donc "découverte" et révèle soit rien, soit une mine, soit un chiffre.
 
@@ -60,3 +60,7 @@ Exemple : S'il y a 10 mines sur le plateau, et 5 drapeaux posés, afficher 5.
 - Il n'y normalement pas besoin d'écrire de HTML/CSS additionel pour résoudre ce sujet.
 
 - Vous pouvez utiliser le code source fourni comme bon vous semble, mais l'apparence du projet ne doit pas être altérée sur le rendu final.
+
+
+### Tâche bonus
+Faire en sorte que l'état d'une partie en cours soit stocké (temps, heure...) et puisse être repris même si la page est rechargée.

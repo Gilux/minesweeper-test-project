@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minesweeper</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="score-indicator">
+    <div class="time">
+      <img src="img/time.png">
+      --:--
+    </div>
+    <div class="flags">
+      <img src="img/flag.png">
+      10
+    </div>
+  </aside>
+
+  <main class="board">  
+    <div class="grid">
+      <div class="row">
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+      </div>
+      <div class="row">
+        <button class="box"></button>
+        <button class="box"></button>
+        <div class="box uncovered has-indicator" data-mine-count="1"></div>
+        <div class="box uncovered has-indicator" data-mine-count="2"></div>
+        <div class="box uncovered has-indicator" data-mine-count="3"></div>
+        <div class="box uncovered has-indicator" data-mine-count="4"></div>
+        <div class="box uncovered has-indicator" data-mine-count="5"></div>
+        <div class="box uncovered has-indicator" data-mine-count="6"></div>
+        <div class="box uncovered has-indicator" data-mine-count="7"></div>
+        <div class="box uncovered has-indicator" data-mine-count="8"></div>
+      </div>
+      <div class="row">
+        <div class="box uncovered"></div>
+        <div class="box uncovered"></div>
+        <div class="box uncovered"></div>
+        <div class="box uncovered"></div>
+        <div class="box uncovered"></div>
+        <div class="box uncovered"></div>
+        <div class="box uncovered"></div>
+        <div class="box uncovered"></div>
+        <div class="box uncovered"></div>
+        <div class="box uncovered"></div>
+      </div>
+      <div class="row">
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box flagged"></button>
+        <button class="box flagged"></button>
+        <button class="box flagged"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+      </div>
+      <div class="row">
+        <button class="box"></button>
+        <button class="box"></button>
+        <div class="box uncovered mined"></div>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+      </div>
+      <div class="row">
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+      </div>
+      <div class="row">
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+      </div>
+      <div class="row">
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+      </div>
+      <div class="row">
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+      </div>
+      <div class="row">
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+      </div>
+    </div>
+  </main>
+
+  <audio id="shovel">
+    <source src="audio/shovel.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="boom">
+    <source src="audio/explosion.mp3" type="audio/mpeg">
+  </audio>
+  
+</body>
+</html>

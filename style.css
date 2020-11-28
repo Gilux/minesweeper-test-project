@@ -1,0 +1,162 @@
+*,*:before,*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(19, 88, 48);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.btn {
+  color: white;
+  background-color: rgb(226, 132, 25);
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.board {
+  width: 400px;
+  height: 400px;
+  background-color: #fff;
+}
+
+.board, .score-indicator, .highscores {
+  box-shadow: 1px 1px 13px 12px rgba(0,0,0,0.09);
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.box {
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  background-size: 80% 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+.row:nth-child(odd) .box:nth-child(odd), .row:nth-child(even) .box:nth-child(even) {
+  background-color: rgb(22, 141, 42);
+}
+.row:nth-child(odd) .box:nth-child(even), .row:nth-child(even) .box:nth-child(odd) {
+  background-color: rgb(51, 201, 76);
+}
+
+.row:nth-child(odd) .box.uncovered:nth-child(odd), .row:nth-child(even) .box.uncovered:nth-child(even) {
+  background-color: rgb(228, 205, 76);
+}
+.row:nth-child(odd) .box.uncovered:nth-child(even), .row:nth-child(even) .box.uncovered:nth-child(odd) {
+  background-color: rgb(238, 236, 150);
+}
+
+.box.uncovered {
+  font-weight: 600;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.box.has-indicator {
+  position: relative;
+}
+
+.box.has-indicator:before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  font-size: 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  content: attr(data-mine-count);
+}
+
+.has-indicator[data-mine-count="1"]:before { color: rgb(255, 102, 0); }
+.has-indicator[data-mine-count="2"]:before { color: rgb(56, 43, 228); }
+.has-indicator[data-mine-count="3"]:before { color: rgb(240, 54, 37); }
+.has-indicator[data-mine-count="4"]:before { color: rgb(26, 167, 68); }
+.has-indicator[data-mine-count="5"]:before { color: rgb(214, 35, 190); }
+.has-indicator[data-mine-count="6"]:before { color: rgb(48, 202, 223); }
+.has-indicator[data-mine-count="7"]:before { color: rgb(41, 27, 117); }
+.has-indicator[data-mine-count="8"]:before { color: rgb(137, 143, 53); }
+
+.box.flagged {
+  background-image: url("img/flag.png");
+}
+
+.box.mined {
+  background-image: url("img/mine.png");
+}
+
+.score-indicator, .highscores {
+  width: 200px;
+  background-color: rgb(238, 236, 150);
+  margin-bottom: 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  font-family: Roboto, sans-serif;
+  justify-content: space-around;
+  align-items: stretch;
+
+  padding: 10px 30px;
+
+  border-radius: 5px;
+}
+
+.highscores {
+  flex-flow: column nowrap;
+  width: 350px;
+  text-align: center;
+  align-items: center;
+}
+
+.highscores ul {
+  align-self: stretch;
+}
+
+.highscores li {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.highscores li .time {
+  text-align: right;
+}
+
+.score-indicator .time, .score-indicator .flags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-indicator img {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+
+  margin-right: 8px;
+}

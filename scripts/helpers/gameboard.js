@@ -2,7 +2,7 @@ import GameBoard from "../classes/GameBoard.js"
 import { randomNumber } from "./misc.js"
 
 // See in uniqueRandomCoords why this :D
-class CoordsSet extends Set{
+class CoordsSet extends Set {
   add(elem){
     return super.add(typeof elem === 'object' ? JSON.stringify(elem) : elem);
   }
@@ -17,7 +17,7 @@ export const generateGameBoard = (gameboardWidth, mineCount) => {
   // Call more low-level functions to generate a unique set of mines coordinates
   const minesCoordinates = uniqueRandomCoords(gameboardWidth, mineCount)
   
-  const gameBoard = new GameBoard(
+  const gameBoard = new GameBoard (
     document.querySelector('.board .grid'),
     gameboardWidth
   )
@@ -33,6 +33,7 @@ export const generateGameBoard = (gameboardWidth, mineCount) => {
 // because a classic Set will consider 2 array elements as unique
 // (because of their memory address) even with the same content.
 const uniqueRandomCoords = (gameboardWidth, pairCount) => {
+  // The Set acts like an array, but only allows unique elements inside it.
   const pairs = new CoordsSet()
   
   while(pairs.size < pairCount) {
